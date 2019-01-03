@@ -1,1 +1,24 @@
-<h1>It's work</h1>
+<h1>Summarizer</h1>
+
+<form action={% url 'result' %}>
+
+  <input type="text" name='email'>
+  <br>
+  <textarea name="fulltext" rows="10" cols="30">
+  A Wikipédia é um projeto de enciclopédia colaborativa, universal e multilíngue estabelecido na internet sob o princípio wiki. 
+  Tem como propósito fornecer um conteúdo livre, objetivo e verificável​​, 
+  que todos possam editar e melhorar. O projeto é definido pelos princípios fundadores. 
+  O conteúdo é disponibilizado sob a licença Creative Commons BY-SA e pode ser copiado 
+  e reutilizado sob a mesma licença — mesmo para fins comerciais — desde que respeitando os termos e condições de uso.
+  Todos os editores da Wikipédia são voluntários. Eles integram uma comunidade colaborativa, 
+  sem um líder, na qual os membros coordenam os seus esforços no âmbito dos projetos temáticos e diversos espaços de discussão. 
+  Dentre as várias páginas de ajuda à disposição dos interessados em contribuir, 
+  estão as que explicam como criar um artigo ou editar um artigo. Em caso de dúvidas, não hesite em perguntar.
+  Todos podem publicar conteúdo on-line desde que sigam as regras básicas estabelecidas pela comunidade, 
+  como por exemplo a verificabilidade da informação ou notoriedade do tema. Debates e comentários 
+  sobre os artigos são bem-vindos. As páginas de discussão servem para centralizar reflexões e
+  avaliações sobre como melhorar o conteúdo da Wikipédia.
+  </textarea>
+  <br>
+  <input type="submit">
+</form>
