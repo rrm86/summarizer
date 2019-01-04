@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Summarizer(models.Model):
 
     email = models.EmailField(max_length=254)
@@ -8,4 +9,3 @@ class Summarizer(models.Model):
 
     def __str__(self):
         return self.summarized
-    
