@@ -8,11 +8,12 @@ def Root(request):
 
 
 def Result(request):
-    email = request.GET["email"]
+    title = request.GET["title"]
     original = request.GET["fulltext"]
     summarized = summarize(original)
-    response = {"email": email, "fulltext": summarized}
-    model = Summarizer(email=email, original=original, summarized=summarized)
+    summarized_split = summarize(original, split=True, ratio=0.3)
+    response = {"title": title, "fulltext": summarized, "split":summarized_split}
+    model = Summarizer(title=title, original=original, summarized=summarized)
     model.save()
 
     return render(request, "summarizer/result.html", response)

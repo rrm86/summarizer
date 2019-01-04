@@ -1,7 +1,13 @@
 <h1>Result</h1>
 
-<h3>This is the {{email}}</h3>
+<h5>This is the {{title}}</h5>
 <br>
 <br>
 <h3>Summarized text</h3>
 {{fulltext}}
+<h3>Splited text</h3>
+{% for text in split%}
+<br>
+{{text}}
+<br>
+{% endfor %}
