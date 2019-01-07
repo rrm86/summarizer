@@ -1,20 +1,20 @@
+'''Building View'''
 from django.shortcuts import render
-from summarizer.models import Summarizer
 from gensim.summarization.summarizer import summarize
+from summarizer.models import Summarizer
 
 
-def Root(request):
+
+def root(request):
     return render(request, "summarizer/home.html")
 
 
-def Result(request):
+def result(request):
     title = request.GET["title"]
     original = request.GET["fulltext"]
-    summarized = summarize(original)
     summarized_split = summarize(original, split=True, ratio=0.3)
-    response = {"title": title, "fulltext": summarized, "split":summarized_split}
-    model = Summarizer(title=title, original=original, summarized=summarized)
+    response = {"title": title, "split": summarized_split}
+    model = Summarizer(title=title, original=original, summarized=summarized_split)
     model.save()
 
     return render(request, "summarizer/result.html", response)
-
